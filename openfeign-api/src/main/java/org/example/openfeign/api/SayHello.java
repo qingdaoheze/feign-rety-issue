@@ -2,8 +2,7 @@ package org.example.openfeign.api;
 
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.Mapping;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 /**
  * @author Thomas Li
@@ -12,5 +11,5 @@ import org.springframework.web.bind.annotation.PostMapping;
 @FeignClient("hello-server")
 public interface SayHello {
     @GetMapping("/sayHello")
-    String sayHello(String name);
+    String sayHello(@RequestParam("name") String name);
 }
